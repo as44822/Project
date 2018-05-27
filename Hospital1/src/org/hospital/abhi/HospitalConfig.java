@@ -1,9 +1,11 @@
 package org.hospital.abhi;
+
 import java.util.Properties;
 
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -17,10 +19,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceView;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages= {"org.hospital.abhi"})
+@ComponentScan(basePackages= {"org.hospital.*"})
 public class HospitalConfig extends WebMvcConfigurerAdapter{
 	@Bean
 	ViewResolver createViewResolver() {

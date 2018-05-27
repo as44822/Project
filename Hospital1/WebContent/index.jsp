@@ -9,17 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- <center>
-<h1>Register New User</h1>
-<spring:form action="adduser.hos" method="post" commandName="addUser">
-<table>
-<tr><td>Name </td><td><spring:input path="uname"/></td></tr>
-<tr><td>Email</td><td><spring:input path="uemail"/></td></tr>
-<tr><td>Phone</td><td><spring:input path="uphone"/></td></tr>
-<tr><td align="center" colspan="2"> <input type="submit" value="Add User"/></td></tr>
-</table>
-</spring:form>
-</center> --%>
-hi
+<a href="showadduser.hos">add User</a>
 </body>
 </html>
