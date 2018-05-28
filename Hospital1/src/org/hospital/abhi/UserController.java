@@ -42,8 +42,10 @@ public class UserController {
 		boolean added=userService.addUser(uto);
 		if(added){
 			req.setAttribute("MSG", "User Added Successfully");
+			System.out.println("User Added Successfully");
 		}else{
 			req.setAttribute("MSG", "Error While Adding User");
+			System.out.println("NOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
 		}
 		return "user";
 	}

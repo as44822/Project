@@ -5,7 +5,8 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
-
+import org.hospital.service.UserService;
+import org.hospital.service.UserServiceImp;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -56,12 +57,22 @@ public class HospitalConfig extends WebMvcConfigurerAdapter{
 	@Bean
 	public HibernateTemplate hibernateTamplate(SessionFactory sf){
 		HibernateTemplate hTemp=new HibernateTemplate(sf);
+		hTemp.setCheckWriteOperations(false);
 		return hTemp;
 	}
 	
 	@Bean 
 	public HibernateTransactionManager transactionManager(SessionFactory sf){
 		HibernateTransactionManager txManager=new HibernateTransactionManager(sf);
+	
 		return txManager;
 	}
+	
+	
+	@Bean 
+	public UserService userManagerBean(){
+		
+		return new UserServiceImp();
+	}
+	
 }

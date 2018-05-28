@@ -10,7 +10,9 @@ import javax.persistence.*;
 @Table(name="user1")
 public class User {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	// in Oracle  CREATE SEQUENCE USER_SEQ START WITH 1 INCREMENT BY 1;
+	@GeneratedValue(strategy=GenerationType.AUTO, generator = "SEQ")
+	@SequenceGenerator(name = "SEQ", sequenceName = "USER_SEQ")
 	@Column(name="userid")
 	int uid;
 	@Column(name="name")

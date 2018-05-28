@@ -14,6 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserDaoImp implements UserDao {
 	@Autowired
 	HibernateTemplate hTemp;
+	@Autowired
+	Transactional txManager;
 
 	@Override
 	public List<UserTo> getAllUser() {
